@@ -1,0 +1,42 @@
+{
+  "name": "mau",
+  "displayName": "mau",
+  "description": "Syntax highlighting for .mau single-file components",
+  "version": "0.1.0",
+  "publisher": "hexedmaya",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "mau",
+        "aliases": [
+          "mau",
+          "Mau"
+        ],
+        "extensions": [
+          ".mau"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "mau",
+        "scopeName": "text.html.mau",
+        "path": "./syntaxes/mau.tmLanguage.json",
+        "embeddedLanguages": {
+          "meta.embedded.block.javascript": "javascript",
+          "meta.embedded.expression.mau": "javascript",
+          "meta.embedded.block.css": "css"
+        }
+      }
+    ]
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "icon": "icon.png"
+}
