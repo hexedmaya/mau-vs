@@ -1,0 +1,39 @@
+<script>
+  import Item from "./Item.js";
+
+  const n = signal(0);
+  const name = signal("hello");
+  const items = computed(() => [{ id: 1, label: "a" }, { id: 2, label: "b" }]);
+  const inc = () => n.set(n() + 1);
+</script>
+
+<!-- the counter -->
+<section class="counter {n() > 2 ? 'big' : ''}">
+  <h2>{props.title ?? "Counter"}</h2>
+  <p>clicked <b>{n()}</b> times, use \{braces\} as text</p>
+  <button on:click={inc} disabled={n() >= 3}>+1</button>
+  <input bind:value={name}>
+
+  {#if n() > 2}
+    <p>a lot</p>
+  {:else if n() > 0}
+    <p>some</p>
+  {:else}
+    <p>none</p>
+  {/if}
+
+  <ul>
+    {#each items() as item (item.id)}
+      <Item label={item.label} />
+    {/each}
+  </ul>
+
+  <p>{@html "<em>raw</em>"}</p>
+
+  <svg viewBox="0 0 10 10"><path d="M0 0L10 10" /></svg>
+</section>
+
+<style>
+  :scope { border: 2px solid; padding: 1rem; }
+  b { color: rebeccapurple; }
+</style>

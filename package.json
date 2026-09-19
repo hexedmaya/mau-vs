@@ -4,12 +4,31 @@
   "description": "Syntax highlighting for .mau single-file components",
   "version": "0.1.0",
   "publisher": "hexedmaya",
+  "license": "SEE LICENSE IN LICENSE",
+  "icon": "icon.png",
   "engines": {
     "vscode": "^1.70.0"
   },
   "categories": [
     "Programming Languages"
   ],
+  "keywords": [
+    "mau",
+    "syntax highlighting",
+    "frontend",
+    "template"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hexedmaya/mau-vs.git"
+  },
+  "homepage": "https://github.com/hexedmaya/mau-vs#readme",
+  "bugs": {
+    "url": "https://github.com/hexedmaya/mau-vs/issues"
+  },
+  "scripts": {
+    "test": "node --test \"test/*.test.mjs\""
+  },
   "contributes": {
     "languages": [
       {
@@ -37,6 +56,8 @@
       }
     ]
   },
-  "license": "SEE LICENSE IN LICENSE",
-  "icon": "icon.png"
+  "devDependencies": {
+    "vscode-oniguruma": "^2.0.1",
+    "vscode-textmate": "^9.3.2"
+  }
 }
