@@ -28,26 +28,39 @@ A `.mau` file has a script, one root element and a style, and the extension colo
 - blocks: `{#if}`, `{:else if}`, `{:else}`, `{#each ... as ...}`, `{@html}`
 - `on:` and `bind:` attributes
 - components (`<Item />`) in their own color
+- `\{` and `\}` as an escaped brace, not as the start of an expression
 - comments, brackets and auto-closing pairs
 
 There is no language server, no formatter and no snippets yet.
 
 ## Install
 
-The extension is not on the marketplace yet. Copy this folder into your VS Code extensions folder, named `hexedmaya.mau-0.1.0`, and reload the window:
+The extension is not on the marketplace yet. Build the package and install it:
 
-- Windows: `%USERPROFILE%\.vscode\extensions\`
-- macOS and Linux: `~/.vscode/extensions/`
+```
+npx @vscode/vsce package
+code --install-extension mau-0.1.0.vsix
+```
 
-Or open this folder in VS Code and press `F5` to try it in a test window.
+Reload the VS Code window afterwards. If a file is not recognized, pick **mau** in the language mode at the bottom right.
 
-If a file is not recognized, pick **mau** in the language mode at the bottom right.
+To try changes without installing, open this folder in VS Code and press `F5`.
+
+## Test
+
+The tests run the real grammar together with VS Code's own JavaScript and CSS grammars and check which color category each piece of text gets. They need a VS Code installation, which they find on their own. Set `VSCODE_EXTENSIONS` to its `resources/app/extensions` folder if they do not.
+
+```
+npm install
+npm test
+```
 
 ## Files
 
 - `syntaxes/mau.tmLanguage.json`: the TextMate grammar
 - `language-configuration.json`: brackets, comments, auto-closing pairs
 - `package.json`: the extension manifest
+- `test/`: the grammar tests and a sample component
 - `icon.png`: the extension icon
 
 ## License and brand
