@@ -39,7 +39,7 @@ The extension is not on the marketplace yet. Build the package and install it:
 
 ```
 npx @vscode/vsce package
-code --install-extension mau-0.1.0.vsix
+code --install-extension mau-0.1.1.vsix
 ```
 
 Reload the VS Code window afterwards. If a file is not recognized, pick **mau** in the language mode at the bottom right.
@@ -62,6 +62,7 @@ npm test
 - `package.json`: the extension manifest
 - `test/`: the grammar tests and a sample component
 - `icon.png`: the extension icon
+- `icons/mau.svg`: the icon VS Code shows next to `.mau` files
 
 ## License and brand
 

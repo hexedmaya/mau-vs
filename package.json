@@ -2,7 +2,7 @@
   "name": "mau",
   "displayName": "mau",
   "description": "Syntax highlighting for .mau single-file components",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "hexedmaya",
   "license": "SEE LICENSE IN LICENSE",
   "icon": "icon.png",
@@ -40,7 +40,11 @@
         "extensions": [
           ".mau"
         ],
-        "configuration": "./language-configuration.json"
+        "configuration": "./language-configuration.json",
+        "icon": {
+          "light": "./icons/mau.svg",
+          "dark": "./icons/mau.svg"
+        }
       }
     ],
     "grammars": [
