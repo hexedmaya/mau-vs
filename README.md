@@ -35,7 +35,15 @@ There is no language server, no formatter and no snippets yet.
 
 ## Install
 
-The extension is not on the marketplace yet. Build the package and install it:
+The extension is not on the marketplace yet.
+
+Download `mau-0.1.1.vsix` from the [latest release](https://github.com/hexedmaya/mau-vs/releases/latest) and install it:
+
+```
+code --install-extension mau-0.1.1.vsix
+```
+
+Or build it from the source in this folder:
 
 ```
 npx @vscode/vsce package
